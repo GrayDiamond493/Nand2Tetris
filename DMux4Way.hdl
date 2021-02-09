@@ -1,9 +1,0 @@
-CHIP DMux4Way{
-    IN in,select1,select2;
-    OUT outA,outB,outC,outD;
-
-    PARTS:
-    DMux(in=in,sel=select2,a=pina,b=pinb);
-    DMux(in=pina,sel=select1,a=outA,b=outB);
-    DMux(in=pinb,sel=select1,a=outC,b=outD);    
-}

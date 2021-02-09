@@ -1,8 +1,0 @@
-CHIP HalfAdder{
-    IN in1, in2;
-    OUT out,carry;
-
-    PARTS:
-    Xor(in1=in1,in2=in2,out=out);
-    And(in1=in1,in2=in2,out=carry);
-}
