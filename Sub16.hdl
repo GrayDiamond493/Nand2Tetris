@@ -1,0 +1,10 @@
+CHIP Sub16{
+    IN  in1[16],in2[16];
+    OUT out[16];
+
+    PARTS:
+    Not16(in=in1,out=nin1);
+    Not16(in=in2,out=nin2);
+    Add16(in1=nin1,in2=nin2,out=sum);
+    Not16(in=sum, out=out);
+}
