@@ -1,34 +1,25 @@
-// KEYBOARD > 0? FILL : CLEAR
 (LOOP)
-    // Get keyboard value.
     @KBD
     D=M
 
-    // Jump to on if it's more than 0.
     @ON
     D;JGT
 
-    // Jump to off otherwise.
     @OFF
     0;JMP
 
 // Turn the screen on and loop.
 (ON)
-    // Set the draw value to -1 (1111111111111111).
-    @R0
+    @0
     M=-1
 
-    // Draw.
     @DRAW
     0;JMP
 
-// Turn the screen off and loop.
 (OFF)
-    // Set the draw value to 0 (0000000000000000).
-    @R0
+    @0
     M=0
 
-    // Draw.
     @DRAW
     0;JMP
 
