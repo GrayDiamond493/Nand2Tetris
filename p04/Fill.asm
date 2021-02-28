@@ -8,7 +8,6 @@
     @OFF
     0;JMP
 
-// Turn the screen on and loop.
 (ON)
     @0
     M=-1
@@ -23,18 +22,14 @@
     @DRAW
     0;JMP
 
-// Set the screen to R0 and loop.
 (DRAW)
-    // Set the counter (R1) to 8192 (this is how many blits we need to do).
-    // We will keep counting down with this as we draw.
     @8191
     D=A
     @R1
     M=D
 
-    // Walk the screen and set the values to R0.
     (NEXT)
-        // Calculate the position.
+        // Calculate pos.
         @R1
         D=M
         @pos
@@ -44,22 +39,20 @@
         @pos
         M=M+D
 
-        // Actually draw the value at the current position.
+        // draw
         @R0
         D=M
         @pos
         A=M
         M=D
 
-        // Decrement the counter (R1).
+        // counter
         @R1
         D=M-1
         M=D
 
-        // Next if the counter is still >= 0.
         @NEXT
         D;JGE
 
-    // Loop back around.
     @LOOP
     0;JMP

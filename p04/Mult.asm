@@ -2,18 +2,16 @@
 @R2
 M=0
 
-// Jump into the first STEP if R0 > 0.
+
 @R0
 D=M
 @STEP
 D;JGT
 
-// If it didn't jump, go to END.
 @END
 0;JMP
 
-// Adds R1 to R2 and removes 1 from R0.
-// If R0 is more than 0 we step again.
+
 (STEP)
     // Get R2.
     @R2
@@ -27,12 +25,11 @@ D;JGT
     @R2
     M=D
 
-    // Reduce R0 by 1.
+    // count
     @R0
     D=M-1
     M=D
 
-    // If R0 is still > 0 then loop.
     @STEP
     D;JGT
 
