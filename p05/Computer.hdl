@@ -1,4 +1,4 @@
-CHIP Computador {
+CHIP Computer {
 
     IN reset;
 
