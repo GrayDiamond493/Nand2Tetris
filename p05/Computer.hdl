@@ -6,5 +6,5 @@ CHIP Computer {
     ROM32K(address=pc, out=instruction);
     CPU(inM=memOut, instruction=instruction, reset=reset, outM=outM, 
         writeM=writeM, addressM=addressM, pc=pc);
-    Memoria(in=outM, load=writeM, address=addressM, out=memOut);
+    Memory(in=outM, load=writeM, address=addressM, out=memOut);
 }

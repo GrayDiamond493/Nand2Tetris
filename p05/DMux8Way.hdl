@@ -4,6 +4,6 @@ CHIP DMux8Way{
 
     PARTS:
     DMux(in=in,sel=sel[2],a=pinA,b=pinB);
-    DMux4Way(in=pinA,select1=sel[0],select2=sel[1],outA=a,outB=b,outC=c,outD=d);
-    DMux4Way(in=pinB,select1=sel[0],select2=sel[1],outA=e,outB=f,outC=g,outD=h);    
+    DMux4Way(in=pinA,sel=sel[0..1],a=a,b=b,c=c,d=d);
+    DMux4Way(in=pinB,sel=sel[0..1],a=e,b=f,c=g,d=h);
 }
